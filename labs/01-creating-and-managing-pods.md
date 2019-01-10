@@ -17,17 +17,23 @@ Namespaces provide a scope for names. Names of resources need to be unique withi
 Replace 'group-name' by your own group's name in order to namespace your resources. Note that you will have to use the same namespace for all resources you create throughout this workshop.
 
 ```
-vim src/k8s/monolith.yaml
+vim src/k8s/namespace.yaml
+```
+
+Create the namespace using kubectl:
+
+```
+kubectl create -f src/k8s/namespace.yaml
 ```
 
 For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started
 
 ## Tutorial: Creating Pods
 
-Explore the `monolith` pod configuration file:
+Edit the `monolith` pod configuration file and add your namespace to the pod:
 
 ```
-cat src/k8s/monolith.yaml
+vim src/k8s/monolith.yaml
 ```
 
 Create the `monolith` pod using kubectl:
@@ -57,6 +63,7 @@ kubectl describe pods <pod-name> -n <namespace>
 * What containers are running in the `monolith` Pod?
 * What are the labels attached to the `monolith` Pod?
 * What arguments are set on the `monolith` container?
+* What happens if you don't specify a namespace?
 
 ## Exercise: Interact with a Pod remotely
 
@@ -67,7 +74,7 @@ Pods are allocated a private IP address by default and cannot be reached outside
 Use two terminals. One to run the `kubectl port-forward` command, and the other to issue `curl` commands.
 
 ```
-kubectl port-forward monolith 10080:80 - <namespace>
+kubectl port-forward monolith 10080:80 -n <namespace>
 ```
 
 ```
@@ -95,7 +102,7 @@ curl -H "Authorization: Bearer <token>" http://127.0.0.1:10080/secure
 Use the `kubectl logs` command to view the logs for the `monolith` Pod:
 
 ```
-kubectl logs monolith
+kubectl logs monolith -n <namespace> 
 ```
 
 > Use the -f flag and observe what happens.
@@ -105,5 +112,5 @@ kubectl logs monolith
 Use the `kubectl exec` command to run an interactive shell inside the `monolith` Pod:
 
 ```
-kubectl exec monolith --stdin --tty -c monolith /bin/sh
+kubectl exec monolith -n <namespace> --stdin --tty -c monolith /bin/sh
 ```
