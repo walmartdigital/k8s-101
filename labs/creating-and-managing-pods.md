@@ -8,6 +8,20 @@ At the core of Kubernetes is the Pod. Pods represent a logical application and h
 
 In this lab you will create a Pod named `monolith` and interact with it using the kubectl command line tool.
 
+# Using namespaces 
+
+Namespaces provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces. Namespaces are a way to divide cluster resources between multiple users.
+
+## Tutorial: Create your own namespace
+
+Replace 'group-name' by your own group's name in order to namespace your resources. Note that you will have to use the same namespace for all resources you create throughout this workshop.
+
+```
+vim src/k8s/monolith.yaml
+```
+
+For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started
+
 ## Tutorial: Creating Pods
 
 Explore the `monolith` pod configuration file:
@@ -29,11 +43,11 @@ Use the `kubectl get` and `kubectl describe` commands to view details for the `m
 ### Hints
 
 ```
-kubectl get pods
+kubectl get pods -n <namespace>
 ```
 
 ```
-kubectl describe pods <pod-name>
+kubectl describe pods <pod-name> -n <namespace>
 ```
 
 ### Quiz
@@ -53,7 +67,7 @@ Pods are allocated a private IP address by default and cannot be reached outside
 Use two terminals. One to run the `kubectl port-forward` command, and the other to issue `curl` commands.
 
 ```
-kubectl port-forward monolith 10080:80
+kubectl port-forward monolith 10080:80 - <namespace>
 ```
 
 ```

@@ -1,8 +1,4 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: group-name
----
+
 apiVersion: v1
 kind: Pod
 metadata:
