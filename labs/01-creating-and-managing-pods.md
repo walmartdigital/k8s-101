@@ -114,3 +114,11 @@ Use the `kubectl exec` command to run an interactive shell inside the `monolith`
 ```
 kubectl exec monolith -n <namespace> --stdin --tty -c monolith /bin/sh
 ```
+## Exercise: Delete your namespace
+
+Use the `kubectl delete` command to delete your namespace.
+
+```
+kubectl delete ns <namespace>
+```
+* What happened to your pod?
