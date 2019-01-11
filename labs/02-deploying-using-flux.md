@@ -8,9 +8,10 @@ In this lab you will learn how to:
 
 * Deploy an artifact using Flux
 * Trigger Flux to force an update to an artifact
-* Configure your deployment so that Flux deploys your artifacts conditionally
 
 ## Exercise: Deploy using Flux
+
+First, make sure that the K8s resources created in the previous step have been deleted (kubectl delete ns <namespace>).
 
 On your local machine, clone the deployment repository for the labs cluster (ask your instructor for the URL).
 
@@ -18,7 +19,7 @@ On your local machine, clone the deployment repository for the labs cluster (ask
 git clone https://<git-remote>/walmartdigital/frontend-k8s
 ```
 
-Copy the `src/k8s/02/monolith.yaml` file to the "deployments" folder, making sure to rename it so that it has a unique name which easily identifies your team. Don't forget to update the namespace in `monolith` pod declaration.
+Copy the `src/k8s/02/monolith.yaml` file to the "deployments" folder, making sure to rename it so that it has a unique name which easily identifies your team. Don't forget to update the namespace in the `monolith` pod declaration.
 
 ```
 cp <path-to-k8s-101-repo>/src/k8s/02/monolith.yaml <path-to-deployment-repo>/frontend-k8s/deployments/labs/eastus2/alice-and-bob.yaml
@@ -36,7 +37,7 @@ kubectl get pods -n <namespace> -w
 
 ### Quiz
 
-* What are the different states that the `monolith` pod goes through?
+* What states does the `monolith` pod go through?
 * Why was there a delay for the changes to be applied?
 
 ## Exercise: Make changes and trigger Flux to sync
@@ -73,7 +74,7 @@ spec:
 
 Use the `kubectl get` command to monitor the new pod being created in your namespace.
 
-In another terminal, use fluxctl to forcefully trigger Flux to sync with deployment repository.
+In another terminal, use fluxctl to forcefully trigger Flux to sync with the deployment repository.
 
 ### Hints
 
