@@ -14,13 +14,13 @@ In this lab you will learn how to:
 Explore the `healthy-monolith` pod configuration file:
 
 ```
-cat pods/healthy-monolith.yaml
+cat src/k8s/03/healthy-monolith.yaml
 ```
 
 Create the `healthy-monolith` pod using kubectl:
 
 ```
-kubectl create -f pods/healthy-monolith.yaml
+kubectl create -f src/k8s/03/healthy-monolith.yaml
 ```
 
 ## Exercise: View Pod details

@@ -17,13 +17,13 @@ Namespaces provide a scope for names. Names of resources need to be unique withi
 Replace 'group-name' by your own group's name in order to namespace your resources. Note that you will have to use the same namespace for all resources you create throughout this workshop.
 
 ```
-vim src/k8s/namespace.yaml
+vim src/k8s/01/namespace.yaml
 ```
 
 Create the namespace using kubectl:
 
 ```
-kubectl create -f src/k8s/namespace.yaml
+kubectl create -f src/k8s/01/namespace.yaml
 ```
 
 For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started
@@ -33,13 +33,13 @@ For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-
 Edit the `monolith` pod configuration file and add your namespace to the pod:
 
 ```
-vim src/k8s/monolith.yaml
+vim src/k8s/01/monolith.yaml
 ```
 
 Create the `monolith` pod using kubectl:
 
 ```
-kubectl create -f src/k8s/monolith.yaml
+kubectl create -f src/k8s/01/monolith.yaml
 ```
 
 ## Exercise: View Pod details
