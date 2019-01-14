@@ -12,7 +12,7 @@ In this lab you will create the `monolith` service and "expose" the `secure-mono
 Explore the monolith service configuration file:
 
 ```
-cat services/monolith.yaml 
+cat src/k8s/05/monolith.yaml 
 ```
 
 Create the monolith service using kubectl:

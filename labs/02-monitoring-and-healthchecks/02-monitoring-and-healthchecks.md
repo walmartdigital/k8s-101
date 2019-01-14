@@ -14,13 +14,13 @@ In this lab you will learn how to:
 Explore the `healthy-monolith` pod configuration file:
 
 ```
-cat src/k8s/03/healthy-monolith.yaml
+cat healthy-monolith.yaml
 ```
 
 Create the `healthy-monolith` pod using kubectl:
 
 ```
-kubectl create -f src/k8s/03/healthy-monolith.yaml
+kubectl create -f healthy-monolith.yaml
 ```
 
 ## Exercise: View Pod details
@@ -62,13 +62,14 @@ Force the `monolith` container readiness probe to fail. Use the `curl` command t
 curl http://127.0.0.1:10081/readiness/status
 ```
 
-Wait about 45 seconds and get the status of the `healthy-monolith` Pod using the `kubectl get pods` command:
+Get the status of the `healthy-monolith` Pod using the `kubectl get pods -w` command:
 
 ```
-kubectl get pods healthy-monolith
+kubectl get pods healthy-monolith -w
 ```
+Make sure to leave this command running.
 
-Use the `kubectl describe` command to get more details about the failing readiness probe:
+In another terminal, use the `kubectl describe` command to get more details about the failing readiness probe:
 
 ```
 kubectl describe pods healthy-monolith
@@ -82,11 +83,7 @@ Force the `monolith` container readiness probe to pass. Use the `curl` command t
 curl http://127.0.0.1:10081/readiness/status
 ```
 
-Wait about 15 seconds and get the status of the `healthy-monolith` Pod using the `kubectl get pods` command:
-
-```
-kubectl get pods healthy-monolith
-```
+Wait about 15 seconds and observe the status of the `healthy-monolith` Pod in the terminal still running the `kubectl get pods -w` command.
 
 ## Exercise: Experiment with Liveness Probes
 
