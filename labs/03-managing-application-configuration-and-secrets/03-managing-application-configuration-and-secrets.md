@@ -59,7 +59,7 @@ In this tutorial you will expose the `nginx-proxy-conf` configmap and the `tls-c
 Examine the `secure-monolith` pod configuration file:
 
 ```
-cat pods/secure-monolith.yaml
+cat secure-monolith.yaml
 ```
 
 ### Quiz
@@ -70,7 +70,7 @@ cat pods/secure-monolith.yaml
 Create the `secure-monolith` Pod using kubectl:
 
 ```
-kubectl create -f pods/secure-monolith.yaml
+kubectl create -f secure-monolith.yaml
 ```
 
 #### Test the HTTPS endpoint
