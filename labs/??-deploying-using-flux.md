@@ -1,3 +1,23 @@
+# Using namespaces 
+
+Namespaces provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces. Namespaces are a way to divide cluster resources between multiple users.
+
+## Tutorial: Create your own namespace
+
+Replace 'group-name' by your own group's name in order to namespace your resources. Note that you will have to use the same namespace for all resources you create throughout this workshop.
+
+```
+vim src/k8s/01/namespace.yaml
+```
+
+Create the namespace using kubectl:
+
+```
+kubectl create -f src/k8s/01/namespace.yaml
+```
+
+For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started
+
 # Deploying using Flux
 
 Flux is a tool that automatically ensures that the state of a cluster matches the config in git. It uses an operator in the cluster to trigger deployments inside Kubernetes, which means you don't need a separate CD tool. It monitors all relevant image repositories, detects new images, triggers deployments and updates the desired running configuration based on that (and a configurable policy).
