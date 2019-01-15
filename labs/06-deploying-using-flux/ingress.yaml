@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: apps
+  name: hello
   namespace: group-name
   annotations:
     kubernetes.io/ingress.class: traefik

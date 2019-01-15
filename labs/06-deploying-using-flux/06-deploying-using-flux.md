@@ -17,7 +17,7 @@ In this lab you will learn how to:
 
 Namespaces provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces. Namespaces are a way to divide cluster resources between multiple users.
 
-## Tutorial: Create your own namespace
+## Exercise: Create your own namespace
 
 In the `hello-app.yaml` file, replace all occurences of `group-name` by a value that uniquely identifies your lab group in order to namespace your resources. Note that you will have to use the same namespace for all resources you create throughout this workshop.
 
@@ -84,18 +84,28 @@ An ingress can be configured to give services externally-reachable URLs, load ba
 
 ## Exercise: Expose your Artifact to the Internet using an Ingress Rule
 
-Add the contents of the `ingress.yaml` file at the end of your K8s manifest and commit your changes to the remote deployment repository.
+Edit the `ingress.yaml` file and perform the following changes:
+* Replace the namespace with the one used in the rest of your manifest file
+* Replace the hostname in the ingress rule with one that uniquely identifies your group, e.g., `bob-and-alice.labs-rneaxc.walmartdigital.cl`
 
-Use the `kubectl get ingress -n <namespace> -w` command to monitor the new pod being created in your namespace.
+Add the contents of the edited `ingress.yaml` file at the end of your K8s manifest and commit your changes to the remote deployment repository.
 
-In another terminal, use fluxctl to forcefully trigger Flux to sync with the deployment repository.
+Use the `kubectl get ingress -n <namespace> -w` command to monitor the new resource being created in your namespace.
 
-### Hints
+Once the ingress resource is created, use the `kubectl describe ingress hello -n <namespace>` command to inspect the Ingress object.
 
-```
-fluxctl sync --k8s-fwd-ns flux
-```
+## Exercise: Interact with your Artifact from the Internet
+
+Open a browser and navigate to the URL specified in the ingress rule host field, e.g., https://bob-and-alice.labs-rneaxc.walmartdigital.cl.
+
+Click on the lock icon in the address bar and click to view the certificate presented by the website.
 
 ### Quiz
 
-* What is the output of the fluxctl utility?
+* When is the expiration date of the certificate?
+* What is the common name (CN) that appears in the certificate?
+* What is issuing authority of the certificate?
+
+## Summary
+
+In this lab you learned how to deploy your artifacts the GitOps way using Flux and how to expose your services to the Internet.
