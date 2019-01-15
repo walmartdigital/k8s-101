@@ -1,1 +1,1 @@
-TODO
+This material is heavily inspired from Google Cloud Platform's (GCP) Kubernetes 101 Workshop material [https://github.com/GoogleCloudPlatform/kubernetes-workshops/tree/master/bundles/kubernetes-101]. In many case, this material is literally copied-and-pasted from the aforementioned project.
