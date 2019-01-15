@@ -43,7 +43,7 @@ Get the externally-accessible IP address of the service and connect to it
 minikube service monolith --url
 ```
 ```
-curl -v https://<NODE-IP>:<NODE-PORT>
+curl -v --cacert ca.pem https://<NODE-IP>:<NODE-PORT>
 ```
 
 ### Quiz

@@ -106,7 +106,7 @@ kubectl get services frontend
 ```
 
 ```
-curl -k https://<EXTERNAL-IP>
+curl -v --cacert ca.pem https://<NODE-IP>:<NODE-PORT>
 ```
 
 ## Summary
