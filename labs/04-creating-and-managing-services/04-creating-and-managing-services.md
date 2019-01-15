@@ -12,32 +12,38 @@ In this lab you will create the `monolith` service and "expose" the `secure-mono
 Explore the monolith service configuration file:
 
 ```
-cat src/k8s/05/monolith.yaml 
+cat monolith-svc.yaml 
 ```
 
 Create the monolith service using kubectl:
 
 ```
-kubectl create -f services/monolith.yaml
+kubectl create -f monolith-svc.yaml
 ```
+There are several types of services in K8s including:
 
-Use the `gcloud compute firewall-rules` command to allow traffic to the `monolith` service:
+* ClusterIP: Exposes the service on a cluster-internal IP. Choosing this value makes the service only reachable from within the cluster. This is the default ServiceType.
+* NodePort: Exposes the service on each Node’s IP at a static port (the NodePort). A ClusterIP service, to which the NodePort service will route, is automatically created. You’ll be able to contact the NodePort service, from outside the cluster, by requesting <NodeIP>:<NodePort>.
 
-```
-gcloud compute firewall-rules create allow-monolith-nodeport \
-  --allow=tcp:31000
-```
+## Exercise: Interact with the Monolith Service
 
-## Exercise: Interact with the Monolith Service Remotely
-
-### Hints
+Describe the service:
 
 ```
-gcloud compute instances list
+kubectl describe services monolith
 ```
 
+### Quiz
+
+* What is the NodePort of the service?
+
+Get the externally-accessible IP address of the service and connect to it 
+
 ```
-curl -k https://<EXTERNAL_IP>:31000
+minikube service monolith --url
+```
+```
+curl -v https://<NODE-IP>:<NODE-PORT>
 ```
 
 ### Quiz
@@ -91,16 +97,20 @@ kubectl describe services monolith
 
 * How many endpoints does the `monolith` service have?
 
-## Exercise: Interact with the Monolith Service Remotely
+## Exercise: Interact with the Monolith Service
+
+Connect to the monolith service:
+
+```
+curl -v https://<NODE-IP>:<NODE-PORT>
+```
 
 ### Hints
 
-```
-gcloud compute instances list
-```
+If you get an error related to the SSL certificate not matching the name of the host you're trying to connect to, edit your hosts file and make the ```local.example.com``` host name point to the IP address of the service.
 
 ```
-curl -k https://<EXTERNAL_IP>:31000
+sudo vim /etc/hosts
 ```
 
 ## Tutorial: Remove Labels from Pods
