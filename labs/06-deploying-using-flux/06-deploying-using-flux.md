@@ -1,3 +1,16 @@
+# Deploying using Flux and exposing your artifacts to the Internet
+
+Flux is a tool that automatically ensures that the state of a cluster matches the config in git. It uses an operator in the cluster to trigger deployments inside Kubernetes, which means you don't need a separate CD tool. It monitors all relevant image repositories, detects new images, triggers deployments and updates the desired running configuration based on that (and a configurable policy).
+
+Flux is our tool for implementing GitOps in the Cloud.
+
+In this lab you will learn how to:
+
+* Use namespaces to isolate your artifacts from other users of the cluster
+* Deploy an artifact using Flux
+* Trigger Flux to force an update to an artifact
+* Use ingress rules to expose your artifacts to the Internet
+
 # Using namespaces 
 
 Namespaces provide a scope for names. Names of resources need to be unique within a namespace, but not across namespaces. Namespaces are a way to divide cluster resources between multiple users.
@@ -18,16 +31,7 @@ kubectl create -f src/k8s/01/namespace.yaml
 
 For a quick vim tutorial: https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started
 
-# Deploying using Flux
 
-Flux is a tool that automatically ensures that the state of a cluster matches the config in git. It uses an operator in the cluster to trigger deployments inside Kubernetes, which means you don't need a separate CD tool. It monitors all relevant image repositories, detects new images, triggers deployments and updates the desired running configuration based on that (and a configurable policy).
-
-Flux is our tool for implementing GitOps.
-
-In this lab you will learn how to:
-
-* Deploy an artifact using Flux
-* Trigger Flux to force an update to an artifact
 
 ## Exercise: Deploy using Flux
 
