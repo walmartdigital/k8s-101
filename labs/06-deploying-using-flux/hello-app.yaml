@@ -110,24 +110,3 @@ spec:
     - protocol: "TCP"
       port: 80
       targetPort: 80
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: apps
-  namespace: group-name
-  annotations:
-    kubernetes.io/ingress.class: traefik
-spec:
-  rules:
-  - host: group-name.labs-rneaxc.walmartdigital.cl
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: hello
-          servicePort: 80
-      - path: /login
-      backend:
-        serviceName: auth
-        servicePort: 80
