@@ -27,7 +27,7 @@ vim hello-app.yaml
 
 ## Exercise: Deploy using Flux
 
-On your local machine, clone the deployment repository for the labs cluster (ask your instructor for the URL).
+On your local machine, clone the deployment repository for the frontend labs cluster (ask your instructor for the URL).
 
 ```
 git clone https://<git-remote>/walmartdigital/frontend-k8s
@@ -39,6 +39,8 @@ Copy the `hello-app.yaml` file to the "deployments" folder, making sure to renam
 cp <path-to-k8s-101-repo>/06-deploying-using-flux/hello-app.yaml <path-to-deployment-repo>/frontend-k8s/deployments/labs/eastus2/alice-and-bob.yaml
 ```
 
+Replace the namespace of all K8s resources in the file by your own namespace that uniquely identifies your lab group.
+
 Add your changes, commit them and push them to the Git remote.
 
 ```
@@ -49,7 +51,7 @@ git push
 
 ## Exercise: View your artifacts in the K8s cluster
 
-Connect to the frontend-k8s Labs cluster bastion host:
+Connect to the frontend-k8s Labs cluster bastion host (get the full command from your instructor):
 
 ```
 vault login
@@ -70,42 +72,6 @@ kubectl get pods -n <namespace> -w
 * What states do the pods go through?
 * Why was there a delay for the changes to be applied?
 
-# Using Ingress Rules
-
-Ingress rules expose HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
-
-    internet
-        |
-  [ Ingress ]
-  --|-----|--
-  [ Services ]
-
-An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name-based virtual hosting. An ingress controller is responsible for fulfilling the ingress, usually with a loadbalancer, though it may also configure your edge router or additional frontends to help handle the traffic.
-
-## Exercise: Expose your Artifact to the Internet using an Ingress Rule
-
-Edit the `ingress.yaml` file and perform the following changes:
-* Replace the namespace with the one used in the rest of your manifest file
-* Replace the hostname in the ingress rule with one that uniquely identifies your group, e.g., `bob-and-alice.labs-rneaxc.walmartdigital.cl`
-
-Add the contents of the edited `ingress.yaml` file at the end of your K8s manifest and commit your changes to the remote deployment repository.
-
-Use the `kubectl get ingress -n <namespace> -w` command to monitor the new resource being created in your namespace.
-
-Once the ingress resource is created, use the `kubectl describe ingress hello -n <namespace>` command to inspect the Ingress object.
-
-## Exercise: Interact with your Artifact from the Internet
-
-Open a browser and navigate to the URL specified in the ingress rule host field, e.g., https://bob-and-alice.labs-rneaxc.walmartdigital.cl.
-
-Click on the lock icon in the address bar and click to view the certificate presented by the website.
-
-### Quiz
-
-* When is the expiration date of the certificate?
-* What is the common name (CN) that appears in the certificate?
-* What is issuing authority of the certificate?
-
 ## Summary
 
-In this lab you learned how to deploy your artifacts the GitOps way using Flux and how to expose your services to the Internet.
+In this lab you learned how to deploy your artifacts the GitOps way using Flux.
