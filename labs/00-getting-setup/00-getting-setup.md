@@ -12,6 +12,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * curl/wget
 * [Kubeseal](https://github.com/bitnami-labs/sealed-secrets)
+* [Vault](https://www.vaultproject.io/)
   
 ## Install VirtualBox
 You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg) or using homebrew formula.
@@ -55,11 +56,20 @@ Encrypt your Secret into a SealedSecret, which is safe to store.
     brew install kubeseal
 ```
 
+## Install Vault
+```
+wget https://releases.hashicorp.com/vault/1.0.2/vault_1.0.2_darwin_amd64.zip
+```
+
+## Install Keybase
+```
+wget https://prerelease.keybase.io/Keybase.dmg
+```
+
 ## Clone the project from Github
 ```
     git clone https://github.com/walmartdigital/k8s-101.git
 ```
-
 
 ## Quickstart
 
