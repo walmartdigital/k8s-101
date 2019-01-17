@@ -9,9 +9,7 @@ Flux is our tool for implementing GitOps in the Cloud.
 In this lab you will learn how to:
 
 * Use namespaces to isolate your artifacts from other users of the cluster
-* Deploy an artifact using Flux
-* Trigger Flux to force an update to an artifact
-* Use ingress rules to expose your artifacts to the Internet
+* Deploy an artifact the GitOps way using Flux
 
 # Using namespaces 
 
@@ -45,7 +43,7 @@ Add your changes, commit them and push them to the Git remote.
 
 ```
 git add --all
-git commit --message "<some-message>"
+git commit --message "<some-message> [CI SKIP]"
 git push
 ```
 
