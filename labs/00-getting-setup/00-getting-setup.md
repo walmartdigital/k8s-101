@@ -11,7 +11,13 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/#before-you-begin)
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * curl/wget
+* [Kubeseal](https://github.com/bitnami-labs/sealed-secrets)
   
+## Install VirtualBox
+You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg) or usign homebrew.
+```
+    brew cask install virtualbox
+```
 
 ## Install minikube
 Run the installation command:
@@ -41,6 +47,12 @@ Test to ensure the version you installed is sufficiently up-to-date:
 ## Install curl
 ```
     brew install curl
+```
+
+## Install kubeseal
+Encrypt your Secret into a SealedSecret, which is safe to store.
+```
+    brew install kubeseal
 ```
 
 ## Clone the project from Github
