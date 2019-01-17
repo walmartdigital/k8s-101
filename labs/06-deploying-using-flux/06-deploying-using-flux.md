@@ -73,4 +73,4 @@ kubectl get pods -n <namespace> -w
 
 ## Summary
 
-In this lab you learned how to deploy your artifacts the GitOps way using Flux.
+In this lab, you learned how to isolate your K8s resources using namespaces and to deploy your artifacts the GitOps way using Flux.
