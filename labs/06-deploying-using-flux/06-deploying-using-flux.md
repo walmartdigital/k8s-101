@@ -75,4 +75,7 @@ kubectl get pods -n <namespace> -w
 
 In this lab, you learned how to isolate your K8s resources using namespaces and to deploy your artifacts the GitOps way using Flux.
 
-Continue with [Exposing Frontends and Backends](https://github.com/walmartdigital/k8s-101/blob/master/labs/07-exposing-frontends-and-backends/07-exposing-frontends-and-backends.md)
+
+
+
+Continue to [Exposing Frontends and Backends](https://github.com/walmartdigital/k8s-101/blob/master/labs/07-exposing-frontends-and-backends/07-exposing-frontends-and-backends.md)
