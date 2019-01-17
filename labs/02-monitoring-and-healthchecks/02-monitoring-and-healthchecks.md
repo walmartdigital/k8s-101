@@ -111,8 +111,7 @@ Note: this request will make the `monolith` container to return *failed* livenes
 
 ## Summary
 
-In this lab you learned that Kubernetes supports application monitoring using
-liveness and readiness probes. You also learned how to add readiness and liveness probes to Pods and what happens when probes fail. 
+In this lab you learned that Kubernetes supports application monitoring using liveness and readiness probes. You also learned how to add readiness and liveness probes to Pods and what happens when probes fail. 
 
 
 Continue [Managing Application Configurations and Secrets](https://github.com/walmartdigital/k8s-101/blob/master/labs/03-managing-application-configuration-and-secrets/03-managing-application-configuration-and-secrets.md)

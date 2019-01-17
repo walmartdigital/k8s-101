@@ -94,4 +94,4 @@ Continue with [Monitoring and Healthchecks](https://github.com/walmartdigital/k8
 
 ## Summary
 
-In this lab you learned to create a Pod,  
+In this lab you learned to create a Pod, inspect its configuration/state at runtime, and interact with via `kubectl port-forward`.

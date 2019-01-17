@@ -96,5 +96,5 @@ kubectl get secrets tls-certs -n <group-name> --output="jsonpath={.data.key\.pem
 
 ## Summary
 
-In this lab you learned how to protect Kubernetes secrets using SealedSecret so that they can be store in a Git repository.
+In this lab you learned how to protect Kubernetes secrets using SealedSecret so that they can be stored in a Git repository.
 
