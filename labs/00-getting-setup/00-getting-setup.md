@@ -37,7 +37,7 @@ Test to ensure the version you installed is sufficiently up-to-date:
     Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.2", GitCommit:"cff46ab41ff0bb44d8584413b598ad8360ec1def", GitTreeState:"clean", BuildDate:"2019-01-13T23:15:13Z", GoVersion:"go1.11.4", Compiler:"gc", Platform:"darwin/amd64"}
 ```
 
-Install curl
+## Install curl
 ```
     brew install curl
 ```
