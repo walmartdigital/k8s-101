@@ -14,11 +14,11 @@ An ingress can be configured to give services externally-reachable URLs, load ba
 
 In this part of the lab, we will expose a frontend service to the Internet via the Traefik reverse proxy. Traefik is a modern Cloud native HTTP reverse proxy and load balancer that makes deploying and managing frontend applications easy and scalable.
 
-Edit the `ingress.yaml` file and perform the following changes:
+Edit the `ingress-front.yaml` file and perform the following changes:
 * Replace the namespace with the one used in the rest of your manifest file
 * Replace the hostname in the ingress rule with one that uniquely identifies your group, e.g., `bob-and-alice.labs-rneaxc.walmartdigital.cl`
 
-Add the contents of the edited `ingress.yaml` file at the end of your K8s manifest and commit your changes to the remote deployment repository.
+Add the contents of the edited `ingress-front.yaml` file at the end of your K8s manifest and commit your changes to the remote deployment repository.
 
 Use the `kubectl get ingress -n <namespace> -w` command to monitor the new resource being created in your namespace.
 
@@ -65,6 +65,7 @@ Add you changes and commit them and push them to the remote repository.
 Connect to the backend-k8s Labs cluster bastion host (get the full command from your instructor):
 
 ```
+export VAULT_ADDR=<vault-address>
 vault login
 <vault-token>
 vault ssh -mode=ca -mount-point=<ssh-secret-name> -role=<role-name> <linux-username>@<bastion-hostname>

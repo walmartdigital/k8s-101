@@ -92,3 +92,6 @@ kubectl exec monolith --stdin --tty -c monolith /bin/sh
 
 Continue with [Monitoring and Healthchecks](https://github.com/walmartdigital/k8s-101/blob/master/labs/02-monitoring-and-healthchecks/02-monitoring-and-healthchecks.md)
 
+## Summary
+
+In this lab you learned to create a Pod,  
