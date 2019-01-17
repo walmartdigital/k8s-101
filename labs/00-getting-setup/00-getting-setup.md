@@ -14,7 +14,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * [Kubeseal](https://github.com/bitnami-labs/sealed-secrets)
   
 ## Install VirtualBox
-You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg) or usign homebrew.
+You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg) or using homebrew formula.
 ```
     brew cask install virtualbox
 ```
