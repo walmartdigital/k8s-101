@@ -96,3 +96,5 @@ curl -v https://<hostname>/<path>
 ## Summary
 
 In this lab you learned how to expose your artifacts to the outside of the Kubernetes cluster using Ingress rules.
+
+Continue with [Encrypting Secrets Using Sealed Secrets](https://github.com/walmartdigital/k8s-101/blob/master/labs/08-encrypting-secrets-using-sealed-secrets/08-encrypting-secrets-using-sealed-secrets.md)

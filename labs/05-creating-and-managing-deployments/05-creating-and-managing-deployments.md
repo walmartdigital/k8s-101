@@ -117,3 +117,5 @@ curl -v --cacert ca.pem https://<NODE-IP>:<NODE-PORT>
 ## Summary
 
 Deployments are the preferred way to manage application deployments. You learned how to create, expose and scale deployments.
+
+Continue with [Deploying Using Flux](https://github.com/walmartdigital/k8s-101/blob/master/labs/06-deploying-using-flux/06-deploying-using-flux.md)
