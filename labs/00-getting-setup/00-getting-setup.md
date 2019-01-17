@@ -1,8 +1,8 @@
-#Basic Setup
+# Basic Setup
 The whole lab should be based on minikube, a tool that runs a single-node Kubernetes cluster in a virtual machine on your laptop.
 This guide is based on MacOs and Homebrew installation.
 
-##Prerequisites
+## Prerequisites
 Before attempting to clone repo, be sure your host machine meets the prerequisites:
 
 * git
@@ -12,7 +12,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * curl/wget
   
 
-##Install minikube
+## Install minikube
 Run the installation command:
 ```
     brew cask install minikube
@@ -24,7 +24,7 @@ Check your version.
     minikube version: v0.32.0
 ```
 
-##Install kubectl
+## Install kubectl
 Use the Kubernetes command-line tool, kubectl, to deploy and manage applications on Kubernetes. Using kubectl, you can inspect cluster resources; create, delete, and update components; look at your new cluster; and bring up example apps.
 
 ```
