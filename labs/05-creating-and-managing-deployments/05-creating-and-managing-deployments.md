@@ -93,16 +93,21 @@ In this exercise you will scale the `frontend` deployment using an existing depl
 vim deployments/frontend.yaml
 ```
 
+Change the number of replicas from 3 to 5 and apply the changes to your deployment.
+
 ```
 kubectl apply -f deployments/frontend.yaml
 ```
 
 ## Exercise: Interact with the Frontend Service
 
+Get the IP address and port of your service and connect to it.
+
 ### Hints
 
 ```
 kubectl get services frontend
+minikube service frontend --url
 ```
 
 ```
