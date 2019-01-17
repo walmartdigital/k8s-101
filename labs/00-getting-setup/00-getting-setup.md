@@ -1,8 +1,48 @@
-The whole lab should be based on minikube
-brew cask install minikube
-minikube version: v0.32.0
+#Basic Setup
+The whole lab should be based on minikube, a tool that runs a single-node Kubernetes cluster in a virtual machine on your laptop.
+This guide is based on MacOs and Homebrew installation.
+
+##Prerequisites
+Before attempting to clone repo, be sure your host machine meets the prerequisites:
+
+* git
+* [Homebrew](https://brew.sh)
+* [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/#before-you-begin)
+* [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+* curl/wget
+  
+
+##Install minikube
+Run the installation command:
+```
+    brew cask install minikube
+```
+
+Check your version.
+```
+    minikube version
+    minikube version: v0.32.0
+```
+
+##Install kubectl
+Use the Kubernetes command-line tool, kubectl, to deploy and manage applications on Kubernetes. Using kubectl, you can inspect cluster resources; create, delete, and update components; look at your new cluster; and bring up example apps.
+
+```
+    brew install kubernetes-cli
+```
+
+Test to ensure the version you installed is sufficiently up-to-date:
+```
+    kubectl version
+    Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.2", GitCommit:"cff46ab41ff0bb44d8584413b598ad8360ec1def", GitTreeState:"clean", BuildDate:"2019-01-13T23:15:13Z", GoVersion:"go1.11.4", Compiler:"gc", Platform:"darwin/amd64"}
+```
 
 Install curl
+```
+    brew install curl
+```
 
-SSH into the bastion
-Clone the project from Github
+## Clone the project from Github
+```
+    git clone https://github.com/walmartdigital/k8s-101.git
+```
