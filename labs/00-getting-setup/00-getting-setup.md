@@ -7,6 +7,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 
 * git
 * [Homebrew](https://brew.sh)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - direct download link [here](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg)
 * [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/#before-you-begin)
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * curl/wget
