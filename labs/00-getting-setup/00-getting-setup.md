@@ -46,3 +46,44 @@ Test to ensure the version you installed is sufficiently up-to-date:
 ```
     git clone https://github.com/walmartdigital/k8s-101.git
 ```
+
+
+## Quickstart
+
+### Start Minikube
+
+```
+minikube start
+...
+Starting local Kubernetes v1.12.4 cluster...
+Starting VM...
+Getting VM IP address...
+Moving files into cluster...
+Setting up certs...
+Connecting to cluster...
+Setting up kubeconfig...
+Verifying kubelet health ...
+Verifying apiserver health ...Kubectl is now configured to use the cluster.
+Loading cached images from config file.
+
+
+Everything looks great. Please enjoy minikube!
+```
+
+### Run hello-minikube 
+```
+kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/hello-node
+```
+
+### Expose deploymnet
+
+```
+kubectl expose deployment hello-node --type=LoadBalancer --port=8080
+```
+
+### Test the url.
+```
+curl -v $(minikube service hello-node --url)
+```
+
+Enjoy.
