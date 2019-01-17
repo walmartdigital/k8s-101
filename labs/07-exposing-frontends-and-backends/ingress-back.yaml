@@ -7,10 +7,6 @@ metadata:
     kubernetes.io/ingress.class: nginx
     certmanager.k8s.io/cluster-issuer: letsencrypt-production
 spec:
-  tls:
-  - hosts:
-    - api.labs-fwjyss.walmartdigital.cl
-    secretName: acme-crt-secret
   rules:
   - host: api.labs-fwjyss.walmartdigital.cl
     http:
@@ -29,22 +25,3 @@ proxy:
   path: /
 route:
   strip_path: true
----
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certificate
-metadata:
-  name: acme-crt
-  namespace: group-name
-spec:
-  secretName: acme-crt-secret
-  issuerRef:
-    name: letsencrypt-production
-    kind: ClusterIssuer
-  dnsNames:
-  - api.labs-fwjyss.walmartdigital.cl
-  acme:
-    config:
-    - dns01:
-        provider: cf-dns
-      domains:
-      - api.labs-fwjyss.walmartdigital.cl
