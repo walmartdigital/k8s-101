@@ -48,6 +48,7 @@ In this tutorial you will observe how Kubernetes responds to failed readiness pr
 
 Use the `kubectl port-forward` command to forward a local port to the health port of the `healthy-monolith` Pod.
 
+> Terminal #1
 ```
 kubectl port-forward healthy-monolith 10081:81
 ```
@@ -56,8 +57,9 @@ kubectl port-forward healthy-monolith 10081:81
 
 ### Experiment with Readiness Probes
 
-Force the `monolith` container readiness probe to fail. Use the `curl` command to toggle the readiness probe status:
+In a different terminal window, force the `monolith` container readiness probe to fail. Use the `curl` command to toggle the readiness probe status:
 
+> Terminal #2
 ```
 curl -v http://127.0.0.1:10081/readiness/status
 ```
@@ -91,11 +93,12 @@ Wait about 15 seconds and observe the status of the `healthy-monolith` Pod in th
 Building on what you learned in the previous tutorial use the `kubectl port-forward` and `curl` commands to force the `monolith` container liveness probe to fail. Observe how Kubernetes responds to failing liveness probes.
 
 ### Hints
-
+> Terminal #1
 ```
 kubectl port-forward healthy-monolith 10081:81
 ```
 
+> Terminal #2
 ```
 curl http://127.0.0.1:10081/healthz/status
 ```
