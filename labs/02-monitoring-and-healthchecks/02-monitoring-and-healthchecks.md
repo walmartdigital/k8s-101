@@ -59,7 +59,7 @@ kubectl port-forward healthy-monolith 10081:81
 
 In a different terminal window, force the `monolith` container readiness probe to fail. Use the `curl` command to toggle the readiness probe status:
 
-> Terminal #2
+> Open Terminal #2
 ```
 curl -v http://127.0.0.1:10081/readiness/status
 ```
@@ -98,7 +98,7 @@ Building on what you learned in the previous tutorial use the `kubectl port-forw
 kubectl port-forward healthy-monolith 10081:81
 ```
 
-> Terminal #2
+> Open Terminal #2
 ```
 curl http://127.0.0.1:10081/healthz/status
 ```
