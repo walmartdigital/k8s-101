@@ -140,4 +140,4 @@ In this lab you learned how to expose Pods using services and labels.
 
 
 
-Continue to [Creating and Managing Deployments](https://github.com/walmartdigital/k8s-101/blob/master/labs/05-creating-and-managing-deployments/creating-and-managing-deployments.md)
+Continue to [Creating and Managing Deployments](https://github.com/walmartdigital/k8s-101/blob/master/labs/05-creating-and-managing-deployments/05-creating-and-managing-deployments.md)
