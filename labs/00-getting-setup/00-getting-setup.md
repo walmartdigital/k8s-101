@@ -1,6 +1,7 @@
 # Basic Setup
-The whole lab should be based on minikube, a tool that runs a single-node Kubernetes cluster in a virtual machine on your laptop.
-This guide is based on MacOs and Homebrew installation.
+The lab is divided in two parts. One that uses Minikube, a tool that runs a single-node Kubernetes cluster in a virtual machine on your laptop. The second part will have you deploy artifacts in a remote Kubernetes cluster.
+
+The exercises in this lab will have you use a variety of tools that you should install before attending the workshop. This guide attempts to provide instructions on how to install these tools for MacOs and Homebrew users.
 
 ## Prerequisites
 Before attempting to clone repo, be sure your host machine meets the prerequisites:
