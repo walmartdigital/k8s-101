@@ -66,8 +66,7 @@ Connect to the backend-k8s Labs cluster bastion host (get the full command from 
 
 ```
 export VAULT_ADDR=<vault-address>
-vault login
-<vault-token>
+export VAULT_TOKEN=<vault-token>
 vault ssh -mode=ca -mount-point=<ssh-secret-name> -role=<role-name> <linux-username>@<bastion-hostname>
 ```
 
