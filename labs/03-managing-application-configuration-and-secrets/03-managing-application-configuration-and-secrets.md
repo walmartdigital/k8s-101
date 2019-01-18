@@ -77,14 +77,14 @@ kubectl create -f secure-monolith.yaml
 
 In one terminal window, forward local port 10443 to 443 of the `secure-monolith` Pod:
 
-> Terminal #1
+> Open Terminal #1
 ```
 kubectl port-forward secure-monolith 10443:443
 ```
 
 In a different terminal window, use the `curl` command to test the HTTPS endpoint:
 
-> Terminal #2
+> Open Terminal #2
 ```
 curl --cacert tls/ca.pem https://127.0.0.1:10443
 ```
