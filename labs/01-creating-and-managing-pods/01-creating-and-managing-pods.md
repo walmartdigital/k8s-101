@@ -52,7 +52,7 @@ Pods are allocated a private IP address by default and cannot be reached outside
 
 Use two terminals. One to run the `kubectl port-forward` command, and the other to issue `curl` commands.
 
-> Terminal #1
+> Open Terminal #1
 ```
 kubectl port-forward monolith 10080:80
 ```
