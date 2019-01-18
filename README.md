@@ -1,1 +1,11 @@
-This material is heavily inspired from Google Cloud Platform's (GCP) Kubernetes 101 Workshop material [https://github.com/GoogleCloudPlatform/kubernetes-workshops/tree/master/bundles/kubernetes-101]. In many case, this material is literally copied-and-pasted from the aforementioned project.
+# Kubernetes 101
+
+In this workshop, you will learn how to:
+* Create and manage Kubernetes resources such as Pods, Deployments and Services
+* Configure Kubernetes resources dynamically using ConfigMaps and Secrets
+* Make your artifacts resilient using Readiness and Liveness checks
+* Deploy your artifacts the GitOps way using Flux
+* Expose your artifacts to the Internet using Ingress
+* Encrypt your secrets using SealedSecret
+
+This material is heavily inspired from [Google Cloud Platform's (GCP) Kubernetes 101 Workshop](https://github.com/GoogleCloudPlatform/kubernetes-workshops/tree/master/bundles/kubernetes-101) material. In many case, it is literally copied-and-pasted from the aforementioned project.
