@@ -38,10 +38,15 @@ pbpaste | base64 -D
 
 As discussed in the previous step, Kubernetes secrets cannot be stored securely. In this part of the lab, we will encrypt our secret into a `SealedSecret` [https://github.com/bitnami-labs/sealed-secrets], which is safe to store - even to a public repository. The SealedSecret can be decrypted only by the controller running in the target cluster and nobody else (not even the original author) is able to obtain the original Secret from the SealedSecret.
 
-Generate the YAML manifest for the secret, making sure to specify a namespace that uniquely identifies your lab team:
+Generate the YAML manifest for the secret, making sure to specify a namespace that uniquely identifies your lab team (the same that you used in lab 06):
 
 ```
-kubectl create secret generic tls-certs --from-file=tls/ -n <group-name> -o yaml --dry-run > tls-certs-secret.yaml
+kubectl create secret generic tls-certs --from-file=tls/ -n <namespace> -o yaml --dry-run > tls-certs-secret.yaml
+```
+
+Check that the secret was properly created.
+```
+cat tls-certs-secret.yaml
 ```
 
 Use the `kubeseal` utility to encrypt the secret:
@@ -50,7 +55,26 @@ Use the `kubeseal` utility to encrypt the secret:
 kubeseal --cert sealed-secrets.cert --format=yaml < tls-certs-secret.yaml > sealed_tls-certs-secrets.yaml
 ```
 
+Check that the SealedSecret was properly created.
+```
+cat sealed_tls-certs-secret.yaml
+```
+
 Open the `sealed_tls-certs-secrets.yaml` file and try to base64-decode the value of the `key.pem` key.
+
+### Hints
+
+Copy the value of the `key.pem` key of the `tls-certs` secret and run the following command:
+
+```
+echo "<value-of-key.pem>" | base64 -D
+```
+
+or
+
+```
+pbpaste | base64 -D
+```
 
 ### Quiz
 
@@ -84,7 +108,7 @@ Extract the value of the `key.pem` field of the `tls-certs` secret and decode it
 ### Hints
 
 ```
-kubectl get secrets tls-certs -n <group-name> --output="jsonpath={.data.key\.pem}" | base64 -d
+kubectl get secrets tls-certs -n <namespace> --output="jsonpath={.data.key\.pem}" | base64 -d
 ```
 
 ### Quiz
