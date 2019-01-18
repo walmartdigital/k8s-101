@@ -1,13 +1,13 @@
 # Exposing Frontends and Backends
 
 Ingress rules expose HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the ingress resource.
-
+```
     internet
         |
   [ Ingress ]
   --|-----|--
   [ Services ]
-
+```
 An ingress can be configured to give services externally-reachable URLs, load balance traffic, terminate SSL, and offer name-based virtual hosting. An ingress controller is responsible for fulfilling the ingress, usually with a loadbalancer, though it may also configure your edge router or additional frontends to help handle the traffic.
 
 ## Exercise: Expose a Frontend to the Internet using an Ingress Rule
