@@ -8,4 +8,8 @@ In this workshop, you will learn how to:
 * Expose your artifacts to the Internet using Ingress
 * Encrypt your secrets using SealedSecret
 
+This workshop is made of a collection of practical exercises/labs aimed at providing you with hands-on experience with Kubernetes. All exercises are contained in the `labs` folder of this repository.
+
+> Note: Performing the labs requires a variety of tools. Make sure to take a look at the `labs/00-getting-setup/00-getting-setup.md` file for the list of tools required and associated installation instructions.
+
 This material is heavily inspired from [Google Cloud Platform's (GCP) Kubernetes 101 Workshop](https://github.com/GoogleCloudPlatform/kubernetes-workshops/tree/master/bundles/kubernetes-101) material. In many case, it is literally copied-and-pasted from the aforementioned project.
