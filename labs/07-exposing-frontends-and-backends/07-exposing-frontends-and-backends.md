@@ -40,16 +40,10 @@ Click on the lock icon in the address bar and click to view the certificate pres
 
 In this part of the lab, we will expose a backend service to the Internet via the Kong API gateway. Kong is a cloud-native, fast, scalable, and distributed Microservice Abstraction Layer (also known as an API Gateway). Its an open source projet and its core values are high performance and extensibility.
 
-On your local machine, clone the deployment repository for the backend labs cluster (ask your instructor for the URL).
+Copy the `hello-app.yaml` file to the backend deployments folder, making sure to rename it to a name that uniquely identifies your team, e.g., `bob-and-alice.yaml`.
 
 ```
-git clone https://<git-remote>/walmartdigital/backend-k8s
-```
-
-Copy the `hello-app.yaml` file to the "deployments" folder, making sure to rename it to a name that uniquely identifies your team, e.g., `bob-and-alice.yaml`.
-
-```
-cp <path-to-k8s-101-repo>/06-deploying-using-flux/hello-app.yaml <path-to-deployment-repo>/backend-k8s/deployments/labs/eastus2/alice-and-bob.yaml
+cp <path-to-k8s-101-repo>/06-deploying-using-flux/hello-app.yaml <path-to-deployment-repo>/backend-k8s/labs/eastus2/alice-and-bob.yaml
 ```
 
 Replace the namespace of all K8s resources in the file with a value that uniquely identifies your lab group.

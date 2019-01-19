@@ -25,16 +25,16 @@ vim hello-app.yaml
 
 ## Exercise: Deploy using Flux
 
-On your local machine, clone the deployment repository for the frontend labs cluster (ask your instructor for the URL).
+On your local machine, clone the deployment repository for k8s-101 workshop (ask your instructor for the URL).
 
 ```
-git clone https://<git-remote>/walmartdigital/frontend-k8s
+git clone git@<server>:<organization>/k8s-101-deployments.git
 ```
 
 Copy the `hello-app.yaml` file to the "deployments" folder, making sure to rename it so that it has a unique name which easily identifies your team, e.g., `bob-and-alice.yaml`.
 
 ```
-cp <path-to-k8s-101-repo>/06-deploying-using-flux/hello-app.yaml <path-to-deployment-repo>/frontend-k8s/deployments/labs/eastus2/alice-and-bob.yaml
+cp <path-to-k8s-101-repo>/06-deploying-using-flux/hello-app.yaml <path-to-deployment-repo>/frontend-k8s/labs/eastus2/alice-and-bob.yaml
 ```
 
 Replace the namespace of all K8s resources in the file by your own namespace that uniquely identifies your lab group.
