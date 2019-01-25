@@ -1,0 +1,26 @@
+apiVersion: v1
+data:
+  proxy.conf: |
+    upstream local {
+        server localhost;
+    }
+
+    server {
+        listen 443;
+        ssl    on;
+
+        ssl_certificate     /etc/tls/cert.pem;
+        ssl_certificate_key /etc/tls/key.pem;
+
+        location / {
+            proxy_pass http://local;
+        }
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2019-01-17T17:56:32Z"
+  name: nginx-proxy-conf
+  namespace: default
+  resourceVersion: "144094"
+  selfLink: /api/v1/namespaces/default/configmaps/nginx-proxy-conf
+  uid: 396c023d-1a81-11e9-832f-080027c30768
