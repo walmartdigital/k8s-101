@@ -105,9 +105,18 @@ kubectl create deployment hello-node --image=gcr.io/hello-minikube-zero-install/
 kubectl expose deployment hello-node --type=LoadBalancer --port=8080
 ```
 
+### Make sure the `STATUS` of the hello-node-... pod is `RUNNING`
+```
+kubectl get po -w
+```
+
 ### Test the url.
 ```
 minikube service hello-node
+
+OR
+
+curl -v $(minikube service hello-node --url)
 ```
 
 Now you can go to [Creating and managing pods](https://github.com/walmartdigital/k8s-101/blob/master/labs/01-creating-and-managing-pods/01-creating-and-managing-pods.md)
