@@ -107,7 +107,7 @@ kubectl expose deployment hello-node --type=LoadBalancer --port=8080
 
 ### Test the url.
 ```
-curl -v $(minikube service hello-node --url)
+minikube service hello-node
 ```
 
 Now you can go to [Creating and managing pods](https://github.com/walmartdigital/k8s-101/blob/master/labs/01-creating-and-managing-pods/01-creating-and-managing-pods.md)

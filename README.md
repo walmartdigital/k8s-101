@@ -21,5 +21,6 @@ This workshop is made of a collection of practical exercises/labs aimed at provi
 
 ## Presentation
 * [Slides](https://slides.com/chindou/kubernetes-101)
+<iframe src="//slides.com/chindou/kubernetes-101/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 This material is heavily inspired from [Google Cloud Platform's (GCP) Kubernetes 101 Workshop](https://github.com/GoogleCloudPlatform/kubernetes-workshops/tree/master/bundles/kubernetes-101) material. In many case, it is literally copied-and-pasted from the above project.
