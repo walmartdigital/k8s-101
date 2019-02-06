@@ -2,12 +2,12 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hello-front
-  namespace: group-name
+  namespace: jayv-labs
   annotations:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: group-name.labs-rneaxc.walmartdigital.cl
+  - host: jayv-labs.labs-rneaxc.walmartdigital.cl
     http:
       paths:
       - path: /
