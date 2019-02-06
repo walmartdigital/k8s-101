@@ -57,7 +57,7 @@ kubeseal --cert sealed-secrets.cert --format=yaml < tls-certs-secret.yaml > seal
 
 Check that the SealedSecret was properly created.
 ```
-cat sealed_tls-certs-secret.yaml
+cat sealed_tls-certs-secrets.yaml
 ```
 
 Open the `sealed_tls-certs-secrets.yaml` file and try to base64-decode the value of the `key.pem` key.
