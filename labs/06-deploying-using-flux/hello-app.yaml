@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: jayv-labs
+  name: group-name
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: hello
-  namespace: jayv-labs
+  namespace: group-name
 spec:
   replicas: 3
   template:
@@ -48,7 +48,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: auth
-  namespace: jayv-labs
+  namespace: group-name
 spec:
   replicas: 1
   template:
@@ -89,7 +89,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: "hello"
-  namespace: jayv-labs
+  namespace: group-name
 spec:
   selector:
     app: "hello"
@@ -102,7 +102,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: "auth"
-  namespace: jayv-labs
+  namespace: group-name
 spec:
   selector:
     app: "auth"
