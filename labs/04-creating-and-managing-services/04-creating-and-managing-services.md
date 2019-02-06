@@ -102,7 +102,7 @@ kubectl describe services monolith
 Connect to the monolith service:
 
 ```
-curl -v https://<NODE-IP>:<NODE-PORT>
+curl -v --cacert ca.pem https://<NODE-IP>:<NODE-PORT>
 ```
 
 ### Hints
