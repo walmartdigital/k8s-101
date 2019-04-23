@@ -57,7 +57,12 @@ Encrypt your Secret into a SealedSecret, which is safe to store.
     brew install kubeseal
 ```
 
-## Install Vault
+## Install Vault with brew
+```
+brew install vault
+```
+
+## or  Vault binary
 ```
 wget https://releases.hashicorp.com/vault/1.0.2/vault_1.0.2_darwin_amd64.zip
 ```
