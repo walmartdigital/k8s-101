@@ -3,12 +3,15 @@ kind: Namespace
 metadata:
   name: group-name
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello
   namespace: group-name
 spec:
+  selector:
+    matchLabels:
+      app: hello
   replicas: 3
   template:
     metadata:
@@ -26,7 +29,7 @@ spec:
               containerPort: 81
           resources:
             limits:
-              cpu: "0.2"
+              cpu: "50m"
               memory: "30Mi"
           livenessProbe:
             httpGet:
@@ -44,12 +47,15 @@ spec:
             initialDelaySeconds: 5
             timeoutSeconds: 1
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth
   namespace: group-name
 spec:
+  selector:
+    matchLabels:
+      app: auth
   replicas: 1
   template:
     metadata:
@@ -67,7 +73,7 @@ spec:
               containerPort: 81
           resources:
             limits:
-              cpu: "0.2"
+              cpu: "50m"
               memory: "30Mi"
           livenessProbe:
             httpGet:

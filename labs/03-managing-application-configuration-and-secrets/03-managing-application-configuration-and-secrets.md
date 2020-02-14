@@ -70,7 +70,7 @@ cat secure-monolith.yaml
 Create the `secure-monolith` Pod using kubectl:
 
 ```
-kubectl create -f secure-monolith.yaml
+kubectl apply -f secure-monolith.yaml
 ```
 
 #### Test the HTTPS endpoint

@@ -19,7 +19,7 @@ cat monolith.yaml
 Create the `monolith` pod using kubectl:
 
 ```
-kubectl create -f monolith.yaml
+kubectl apply -f monolith.yaml
 ```
 
 ## Exercise: View Pod details

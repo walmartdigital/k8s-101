@@ -1,8 +1,11 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello
 spec:
+  selector:
+    matchLabels:
+      app: hello
   replicas: 7
   template:
     metadata:
@@ -20,8 +23,8 @@ spec:
               containerPort: 81
           resources:
             limits:
-              cpu: 0.2
-              memory: "10Mi"
+              cpu: "50m"
+              memory: "20Mi"
           livenessProbe:
             httpGet:
               path: /healthz

@@ -8,7 +8,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 
 * git
 * [Homebrew](https://brew.sh)
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - direct download link [here](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg)
+* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - direct download link [here](https://download.virtualbox.org/virtualbox/6.1.2/VirtualBox-6.1.2-135662-OSX.dmg)
 * [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/#before-you-begin)
 * [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * curl/wget
@@ -16,7 +16,7 @@ Before attempting to clone repo, be sure your host machine meets the prerequisit
 * [Vault](https://www.vaultproject.io/)
   
 ## Install VirtualBox
-You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.0.2/VirtualBox-6.0.2-128162-OSX.dmg) or using homebrew formula.
+You can download from VirtualBox.org with this [link](https://download.virtualbox.org/virtualbox/6.1.2/VirtualBox-6.1.2-135662-OSX.dmg) or using homebrew formula.
 ```
     brew cask install virtualbox
 ```
@@ -24,13 +24,12 @@ You can download from VirtualBox.org with this [link](https://download.virtualbo
 ## Install minikube
 Run the installation command:
 ```
-    brew cask install minikube
+    brew install minikube
 ```
 
 Check your version.
 ```
     minikube version
-    minikube version: v0.32.0
 ```
 
 ## Install kubectl
@@ -43,7 +42,8 @@ Use the Kubernetes command-line tool, kubectl, to deploy and manage applications
 Test to ensure the version you installed is sufficiently up-to-date:
 ```
     kubectl version
-    Client Version: version.Info{Major:"1", Minor:"13", GitVersion:"v1.13.2", GitCommit:"cff46ab41ff0bb44d8584413b598ad8360ec1def", GitTreeState:"clean", BuildDate:"2019-01-13T23:15:13Z", GoVersion:"go1.11.4", Compiler:"gc", Platform:"darwin/amd64"}
+    Client Version: version.Info{Major:"1", Minor:"17", GitVersion:"v1.17.2", GitCommit:"59603c6e503c87169aea6106f57b9f242f64df89", GitTreeState:"clean", BuildDate:"2020-01-23T14:21:54Z", GoVersion:"go1.13.6", Compiler:"gc", Platform:"darwin/amd64"}
+    Server Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.7", GitCommit:"be3d344ed06bff7a4fc60656200a93c74f31f9a4", GitTreeState:"clean", BuildDate:"2020-02-11T19:24:46Z", GoVersion:"go1.13.6", Compiler:"gc", Platform:"linux/amd64"}
 ```
 
 ## Install curl
@@ -82,21 +82,19 @@ wget https://prerelease.keybase.io/Keybase.dmg
 ### Start Minikube
 
 ```
-minikube start
+minikube start --memory 4096 --cpus 4 --kubernetes-version v1.16.7
 ...
-Starting local Kubernetes v1.12.4 cluster...
-Starting VM...
-Getting VM IP address...
-Moving files into cluster...
-Setting up certs...
-Connecting to cluster...
-Setting up kubeconfig...
-Verifying kubelet health ...
-Verifying apiserver health ...Kubectl is now configured to use the cluster.
-Loading cached images from config file.
-
-
-Everything looks great. Please enjoy minikube!
+😄  minikube v1.7.2 on Darwin 10.15.3
+✨  Automatically selected the hyperkit driver
+🔥  Creating hyperkit VM (CPUs=4, Memory=4096MB, Disk=20000MB) ...
+🐳  Preparing Kubernetes v1.16.7 on Docker 19.03.5 ...
+💾  Downloading kubelet v1.16.7
+💾  Downloading kubectl v1.16.7
+💾  Downloading kubeadm v1.16.7
+🚀  Launching Kubernetes ...
+🌟  Enabling addons: default-storageclass, storage-provisioner
+⌛  Waiting for cluster to come online ...
+🏄  Done! kubectl is now configured to use "minikube"
 ```
 
 ### Run hello-minikube 
@@ -122,6 +120,22 @@ minikube service hello-node
 OR
 
 curl -v $(minikube service hello-node --url)
+  
+* Trying 192.168.64.4...
+* TCP_NODELAY set
+* Connected to 192.168.64.4 (192.168.64.4) port 31124 (#0)
+> GET / HTTP/1.1
+> Host: 192.168.64.4:31124
+> User-Agent: curl/7.64.1
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Fri, 14 Feb 2020 02:08:36 GMT
+< Connection: keep-alive
+< Transfer-Encoding: chunked
+<
+* Connection #0 to host 192.168.64.4 left intact
+Hello World!* Closing connection 0
 ```
 
 Now you can go to [Creating and managing pods](https://github.com/walmartdigital/k8s-101/blob/master/labs/01-creating-and-managing-pods/01-creating-and-managing-pods.md)

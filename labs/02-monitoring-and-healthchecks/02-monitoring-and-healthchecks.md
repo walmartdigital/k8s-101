@@ -20,7 +20,7 @@ cat healthy-monolith.yaml
 Create the `healthy-monolith` pod using kubectl:
 
 ```
-kubectl create -f healthy-monolith.yaml
+kubectl apply -f healthy-monolith.yaml
 ```
 
 ## Exercise: View Pod details
